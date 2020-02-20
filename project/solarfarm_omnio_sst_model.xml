@@ -1,0 +1,300 @@
+<project name="Solar_Farm" threads="1" pubsub="auto" heartbeat-interval="1">
+<contqueries>
+<contquery name="query" include-singletons='true'>
+<windows>
+<window-source pubsub="true" name="Source_combiner" insert-only="true" autogen-key='true'>
+<schema-string>
+ID*:int64,timestamp:string,CBX_A2_1_Current_4:double,CBX_B1_3_Temperature:double,CBX_B1_5_Current_2:double,Status_of_Current_Sensor_CBX_B1_2:string,Status_of_Current_Sensor_CBX_A2_1:string,CBX_A4_4_Temperature:double,CBX_A4_2_Current_4:double,CBX_B4_1_Current_3:double,CBX_A2_1_Current_1:double,CBX_A4_1_Current_1:double,Status_of_Current_Sensor_CBX_A3_1:string,CBX_A4_4_Current_4:double,CBX_A3_2_Current_2:double,CBX_A4_3_Current_4:double,Status_of_Current_Sensor_CBX_A3_2:string,CBX_B1_1_String_Voltage:double,Status_of_Current_Sensor_CBX_B1_1:string,CBX_A4_4_Current_1:double,CBX_A2_2_String_Voltage:double,CBX_A4_3_Current_2:double,CBX_B1_5_Current_4:double,CBX_B1_5_Current_3:double,Status_of_Current_Sensor_CBX_A2_2:string,CBX_B1_1_Current_4:double,Status_of_Current_Sensor_CBX_A4_2:string,CBX_B1_2_Current_2:double,CBX_B1_4_Current_3:double,CBX_A2_2_Current_4:double,CBX_B4_2_Current_3:double,CBX_A4_2_Temperature:double,CBX_B4_1_Current_4:double,CBX_B4_2_Current_2:double,CBX_A4_2_Current_1:double,CBX_A3_1_Current_4:double,CBX_A4_1_Temperature:double,CBX_A2_2_Current_1:double,CBX_B1_2_Current_4:double,CBX_A4_1_Current_4:double,CBX_A4_4_Current_3:double,CBX_A4_3_Current_1:double,CBX_B1_4_Current_1:double,CBX_B1_1_Current_2:double,Status_of_Current_Sensor_CBX_B1_3:string,CBX_B1_3_Current_2:double,CBX_B1_2_Temperature:double,CBX_B4_1_Current_1:double,CBX_B1_4_Temperature:double,CBX_B1_5_Temperature:double,CBX_B1_1_Temperature:double,CBX_A4_2_Current_2:double,CBX_A2_2_Current_3:double,CBX_A3_2_Current_3:double,Status_of_Current_Sensor_CBX_A4_3:string,CBX_A4_1_Current_2:double,Status_of_Current_Sensor_CBX_A4_1:string,CBX_B1_3_Current_3:double,CBX_A3_1_Temperature:double,CBX_B1_4_Current_2:double,CBX_B4_1_Current_2:double,Current1_From_Combiner_Box:double,Status_of_Current_Sensor_CBX_B1_5:string,CBX_B4_2_Current_4:double,CBX_A3_2_Current_4:double,CBX_A2_1_Temperature:double,CBX_A4_2_Current_3:double,Status_of_Current_Sensor_CBX_A4_4:string,Current2_from_Combiner_Box:double,CBX_B4_2_Current_1:double,CBX_B1_3_Current_1:double,CBX_A2_1_Current_3:double,Current3_from_Combiner_Box:double,CBX_B1_2_Current_1:double,CBX_A2_2_Current_2:double,Status_of_Current_Sensor_CBX_B4_1:string,Status_of_Current_Sensor_CBX_B4_2:string,CBX_A2_1_Current_2:double,CBX_A3_2_Temperature:double,CBX_B1_5_Current_1:double,CBX_A3_2_Current_1:double,CBX_A4_1_Current_3:double,CBX_B1_4_Current_4:double,CBX_A4_3_Current_3:double,CBX_B4_1_Temperature:double,CBX_B1_1_Current_1:double,CBX_B1_1_Current_3:double,CBX_B4_2_Temperature:double,CBX_A4_3_Temperature:double,CBX_A4_4_Current_2:double,Status_of_Current_Sensor_CBX_B1_4:string,CBX_B1_2_Current_3:double,CBX_B1_3_Current_4:double,CBX_A2_2_Temperature:double
+</schema-string> 
+<connectors>
+            <connector class="fs" name="File">
+              <properties>
+                <property name="type"><![CDATA[pub]]></property>
+                <property name="dateformat"><![CDATA[%Y-%m-%d %H:%M:%S]]></property>
+                <property name="fsname"><![CDATA[New_Combiner_Dataset_for_SST.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+		<property name="rate"><![CDATA[10]]></property>
+		<property name="noautogenfield"><![CDATA[true]]></property>
+		<property name="repeatcount"><![CDATA[10000]]></property>
+              </properties>
+            </connector>
+          </connectors>
+        </window-source>
+<window-calculate name='w_calculate' algorithm='SST'>
+           <schema>
+                <fields>
+		  <field name="ID" type="int64" key="true"/>
+                  <field name="timestamp" type="string"/>
+	       	<field name='projAngle' type='double'/>
+                  <field name='numRank' type='int32'/>
+                  <field name='PCAngleChangeOut' type='double'/>
+                <field name='PCAbsoluteAngleOut' type='double'/>
+		   <field name='prin1Current1_From_Combiner_Box' type='double'/>
+                  <field name='prin1Current2_from_Combiner_Box' type='double'/>
+                  <field name='prin1Current3_from_Combiner_Box' type='double'/>
+                </fields>
+              </schema>
+              <parameters>
+                <properties>
+		<property name="maxPrincipal">3</property>
+                  <property name="windowLength">35</property>
+                  <property name="covForgetFactor">0.2</property>
+                  <property name="meanForgetFactor">0.2</property>
+</properties>
+              </parameters>
+              <input-map>
+                <properties>
+                  <!-- inputs -->
+                  <property name="inputs">Current1_From_Combiner_Box,Current2_from_Combiner_Box,Current3_from_Combiner_Box</property>
+                </properties>
+              </input-map>
+              <output-map>
+                 <properties>
+<property name="projAngleOut">projAngle</property>
+                <property name="PCAngleChangeOut">PCAngleChangeOut</property>
+<property name="PCAbsoluteAngleOut">PCAbsoluteAngleOut</property>
+                  <property name="numRankOut">numRank</property>
+<property name="principalVecOut">prin1Current1_From_Combiner_Box,prin1Current2_from_Combiner_Box,prin1Current3_from_Combiner_Box</property>
+                  </properties>
+              </output-map>
+            </window-calculate>    
+	 <window-copy pubsub="true" name="Retention" output-insert-only='true'>
+          <retention type="bytime_jumping">10</retention> 
+        </window-copy>
+        <window-join pubsub="true" name="Join_Solar">
+          <join type="inner">
+            <conditions>
+              <fields left="ID" right="ID"/>
+            </conditions>
+          </join>
+          <output>
+		<field-expr name="timestamp" type="string"><![CDATA[l_timestamp]]></field-expr>
+		<field-expr name="projAngle" type="double"><![CDATA[l_projAngle]]></field-expr>
+            <field-expr name="PCAngleChangeOut" type="double"><![CDATA[l_PCAngleChangeOut]]></field-expr>
+            <field-expr name="PCAbsoluteAngleOut" type="double"><![CDATA[l_PCAbsoluteAngleOut]]></field-expr>
+            <field-expr name="numRank" type="double"><![CDATA[l_numRank]]></field-expr>
+            <field-expr name="Current1_From_Combiner_Box" type="double"><![CDATA[r_Current1_From_Combiner_Box]]></field-expr>
+            <field-expr name="Current2_from_Combiner_Box" type="double"><![CDATA[r_Current2_from_Combiner_Box]]></field-expr>
+	    <field-expr name="Current3_from_Combiner_Box" type="double"><![CDATA[r_Current3_from_Combiner_Box]]></field-expr>
+         <field-expr name="CBX_A4_1_Current_1" type="double"><![CDATA[r_CBX_A4_1_Current_1]]></field-expr>
+           <field-expr name="prin1Current1_From_Combiner_Box" type="double"><![CDATA[l_prin1Current1_From_Combiner_Box]]></field-expr>
+	   <field-expr name="prin1Current2_from_Combiner_Box" type="double"><![CDATA[l_prin1Current2_from_Combiner_Box]]></field-expr>
+           <field-expr name="prin1Current3_from_Combiner_Box" type="double"><![CDATA[l_prin1Current3_from_Combiner_Box]]></field-expr>	
+	  <field-expr name="CBX_A3_1_Temperature" type="double"><![CDATA[r_CBX_A3_1_Temperature]]></field-expr>	
+	             </output>
+        </window-join>
+<window-filter name='alert_slow_degration' pubsub='true'>
+   <expression><![CDATA[projAngle > 0.10 ]]></expression>
+</window-filter>
+<window-compute pubsub='true' name='Compute_Key'>
+   <schema>
+      <fields>
+<field name="ID" type="int64" key="true"/>
+<field name="timestamp" type="string"/>
+<field name="projAngle" type="double"/>
+<field name="PCAngleChangeOut" type="double"/>
+<field name="PCAbsoluteAngleOut" type="double"/>
+<field name="CBX_A4_1_Current_1" type="double"/>
+<field name="Alert" type="int64"/>
+<field name="Description" type="string"/>
+<field name="Key" type="string"/>
+<field name="Label" type="string"/>
+<field name="Latitude" type="double"/>
+<field name="Longitude" type="double"/>
+</fields>
+</schema>
+   <output>
+<field-expr><![CDATA[timestamp]]></field-expr>
+<field-expr><![CDATA[projAngle]]></field-expr>
+<field-expr><![CDATA[PCAngleChangeOut]]></field-expr>
+<field-expr><![CDATA[PCAbsoluteAngleOut]]></field-expr>
+<field-expr><![CDATA[CBX_A4_1_Current_1]]></field-expr>
+<field-expr><![CDATA[if projAngle > 0.10 return 2 else if CBX_A4_1_Current_1 < 7 return 1 else return 0]]></field-expr>
+<field-expr><![CDATA[if projAngle > 0.10 return "Slow Degradation detected in Current3 from Combiner_Box A3_1" else if CBX_A4_1_Current_1 < 7 return "Large Step change detected in Current4 from Combiner box A4_1" else return "Normal operation" ]]></field-expr>
+<field-expr><![CDATA["x"]]></field-expr>
+<field-expr><![CDATA["SAS Solarfarm 2"]]></field-expr>
+<field-expr><![CDATA[35.823061]]></field-expr>
+<field-expr><![CDATA[-78.757756]]></field-expr>
+ </output>
+</window-compute>
+<window-copy pubsub="true" name="Retention_Agg">
+<retention type="bytime_jumping"><![CDATA[600 seconds]]></retention>
+</window-copy>
+<window-aggregate pubsub="true" name="Aggregate_events">
+<schema>
+<fields>
+<field name="Key" type="string" key="true"/>
+<field name="Count_ID" type="int32"/>
+</fields>
+</schema>
+<output>
+<field-expr><![CDATA[ESP_aCount()]]></field-expr>
+</output>
+</window-aggregate>
+<window-compute pubsub='true' name='Compute_Zip_Lat_Lon'>
+   <schema>
+      <fields>
+<field name="Key" type="string" key="true"/>
+<field name="Count_ID" type="int32"/>
+<field name="Label" type="string"/>
+</fields>
+</schema>
+ <output>
+<field-expr><![CDATA[Count_ID]]></field-expr>
+<field-expr><![CDATA["SAS Solarfarm 2"]]></field-expr>
+ </output>
+</window-compute>
+<window-compute pubsub='true' name='Compute_Temp'>
+   <schema>
+      <fields>
+<field name="ID" type="int64" key="true"/>
+<field name="CBX_A3_1_Temperature" type="double"/>
+<field name="Key" type="string"/>
+</fields>
+</schema>
+   <output>
+<field-expr><![CDATA[CBX_A3_1_Temperature]]></field-expr>
+<field-expr><![CDATA["x"]]></field-expr>
+ </output>
+</window-compute>
+<window-aggregate name='Agg_Temp' pubsub='true'>
+   <schema>
+      <fields>
+         <field name='Key' type='string' key='true'/>
+         <field name='Temperature' type='double'/>
+      </fields>
+   </schema>
+   <output>
+      <field-expr><![CDATA[ESP_aAve(CBX_A3_1_Temperature)]]></field-expr>
+   </output>
+</window-aggregate>
+<window-source pubsub="true" name="Source_weather" insert-only="true" autogen-key='true' >
+<schema-string>
+ID*:int64,timestamp:string,SF2_IB_InvB_DC_Powr_KW:double,SF2_IB_InvB_Current_A:double,SF2_IA_InvA_Volts_AB:double,SF2_MT_Current-Avg:double,SF1_MT_Reactive_Power-Ph_A:double,SF1_MT_Reactive_Power-Ph_C:double,SF2_IB_InvB_Xfmr_Temperature:double,SF2_Met_Precipitation_abs:double,SF2_MT_kWH-Load:double,SF2_MT_Reactive_Power-Ph_C:double,SF2_MT_Bus_Voltage-Ph_BC:double,SF1_SMB_Amps_Phase_A:double,SF1_MT_Reactive_Power-Ph_B:double,SF2_MT_Bus_Voltage-Avg:double,SF2_MT_Frequency:double,SF2_Met_Dew_Point:double,SF1_MT_kWH-Gen:double,SF1_SMB_WattHours_Received:double,SF1_MT_Bus_Voltage-Avg:double,SF1_SMB_Volts_Phase_B-C:double,SF2_IA_Current_Event_Number_for_Manufacturer:double,UPS_Unit_Residual_Lifetime_Days:double,SF1_MT_Reactive_Power-Ph_3_POD:double,SF1_MT_Real_Power-Ph_C:double,UPS_Binary_Alarms:double,SF1_MT_Current-Ph_A:double,SF2_IB_InvB_Max_Power_KW:double,SF1_SMB_Volts_Phase_A-N:double,SF1_MT_Current-Ph_C:double,SF2_IA_Grid_Contactor:double,SF2_IA_InvA_Current_B:double,SF1_MT_Apparent_Power-Ph_3_POD:double,SF2_IB_InvB_Current_B:double,SF1_SMA_WattHours_Received:double,Int_Cab_Sen_Humidity:double,SF1_MT_Frequency:double,SF2_IA_InvA_DC_Voltage:double,SF1_MT_kVARH-Load:double,SF2_IB_InvB_DC_Voltage:double,SF1_SMB_Amps_Phase_B:double,SF1_MT_Bus_Voltage-Ph_AB:double,SF2_MT_Current-Ph_C:double,SF1_SMA_Amps_Phase_C:double,SF1_MT_Real_Power-Ph_3_POD:double,SF1_MT_Bus_Voltage-Ph_BC:double,SF1_MT_Apparent_Power-Ph_B:double,SF1_MT_Current-Ph_B:double,SF2_Met_Wind_Speed_Max:double,SF2_IA_AC_Switch-Disconnector_in_Cabinet:double,SF1_SMA_Watthours_Delivered:double,SF1_SMB_Volts_Phase_C-A:double,SF1_SMB_Volts_Phase_A-B:double,SF2_IB_Current_Event_Number_for_Manufacturer:double,SF1_MT_Real_Power-Ph_B:double,SF2_IA_InvA_Cabinet_Temperature:double,SF1_SMA_Volts_Phase_C-A:double,SF2_IA_InvA_Current_C:double,SF2_MT_Power_Factor-Ph_3:double,SF1_MT_Real_Power-Ph_A:double,SF2_IB_InvB_Heat_Sink_Temperature:double,SF2_MT_Reactive_Power-Ph_A:double,GHI_Met_1_Irradiance:double,SF1_SMA_Volts_Phase_B-C:double,SF1_MT_Power_Factor-Ph_C:double,UPS_Batt_Charged:double,SF2_MT_Power_Factor-Ph_B:double,POA_Met_1_Irradiance:double,SF2_IA_InvA_Xfmr_Temperature:double,SF2_IA_InvA_Heat_Sink_Temperature:double,SF2_Met_Wind_Direction:double,SF2_IB_InvB_Volts_BC:double,SF1_MT_Current-Avg:double,SF1_SMB_Amps_Phase_C:double,SF1_SMB_VAs_3-Phase_Total:double,SF2_MT_kWH_Gen:double,SF2_Met_Barometric_Pressure:double,SF2_Met_T_mod_North:double,SF2_Met_Wind_Speed_Avg:double,SF1_SMA_Volts_Phase_B-N:double,SF2_MT_Bus_Voltage-Ph_CA:double,SF1_SMA_Amps_Phase_B:double,SF2_IB_InvB_Cabinet_Temperature:double,SF1_SMB_VARhours_Positive:double,SF2_IA_InvA_DC_Powr_KW:double,SF2_Met_Compass:double,SF1_SMB_Frequency:double,SF2_MT_Power_Factor-Ph_A:double,SF1_SMA_VARhours_Negative:double,SF1_SMB_VARs_3-Phase_Total:double,SF2_MT_Current-Ph_A:double,SF2_MT_Real_Power-Ph_B:double,SF2_Met_Wind_Chill_temp:double,SF1_MT_kVARH-Gen:double,UPS_Batt_Output_Current:double,SF2_MT_Real_Power-Ph_C:double,SF1_SMA_VARs_3-Phase_Total:double,SF1_SMA_VAs_3-Phase_Total:double,SF2_Met_Ambient_Temp:double,SF1_MT_Power_Factor-Ph_B:double,SF2_IB_InvB_Volts_AB:double,SF1_SMB_Neutral_Current:double,SF2_MT_kVARH-Gen:double,SF2_MT_Apparent_Power-Ph_B:double,SF1_SMB_VARhours_Negative:double,SF1_SMA_Frequency:double,SF2_MT_Power_Factor-Ph_C:double,SF1_SMA_Neutral_Current:double,SF2_Met_T_cell_North:double,SF2_IB_InvB_Frequency:double,SF2_IA_InvA_DC_Current:double,SF2_Met_Relative_Humidity:double,SF2_IA_InvA_Max_Power_KW:double,SF2_IA_InvA_Volts_CA:double,SF1_SMA_Volts_Phase_A-N:double,SF1_MT_Power_Factor-Ph_3:double,SF2_Met_T_mod_South:double,UPS_Residual_Backup_Time:double,SF1_SMB_Watts_3-Phase_Total:double,SF2_IB_Grid_Contactor:double,SF2_MT_Bus_Voltage-Ph_AB:double,SF2_IB_Error_Area:double,SF2_IB_AC_Switch-Disconnector_in_Cabinet:double,SF1_SMB_Volts_Phase_B-N:double,SF2_MT_kVARH-Load:double,SF2_MT_Reactive_Power-Ph_3_POD:double,SF2_IB_InvB_Current_C:double,SF2_MT_Apparent_Power-Ph_A:double,SF2_Met_T_cell_South:double,SF2_IA_InvA_Volts_BC:double,SF1_MT_Apparent_Power-Ph_A:double,SF2_MT_Reactive_Power-Ph_B:double,SF2_IA_Operating_State:double,SF1_SMB_Power_Factor_3-Phase_Total:double,SF2_IA_InvA_Current_A:double,UPS_Batt_Temp:double,SF1_MT_Bus_Voltage-Ph_CA:double,SF2_IA_InvA_Frequency:double,SF1_SMA_Volts_Phase_C-N:double,SF2_IB_InvB_Volts_CA:double,SF2_MT_Current-Ph_B:double,UPS_Battery_Voltage:double,SF1_SMA_Power_Factor_3-Phase_Total:double,SF1_SMB_Watthours_Delivered:double,SF2_MT_Real_Power-Ph_3_POD:double,UPS_Battery_Mode:double,SF1_SMB_Volts_Phase_C-N:double,SF1_SMA_Amps_Phase_A:double,SF2_Met_Wind_Speed:double,SF2_IA_InvA_Avg_Real_Power_KW:double,Int_Cab_Sen_Temperature:double,SF2_MT_Real_Power-Ph_A:double,SF1_SMA_Watts_3-Phase_Total:double,SF1_MT_Apparent_Power-Ph_C:double,SF1_MT_kWH-Load:double,SF2_IB_Operating_State:double,SF1_SMA_VARhours_Positive:double,SF1_MT_Power_Factor-Ph_A:double,SF2_IA_Error_Area:double,SF2_IB_InvB_Avg_Real_Power_KW:double,SF2_MT_Apparent_Power-Ph_C:double,SF2_IB_InvB_DC_Current:double,SF1_SMA_Volts_Phase_A-B:double,SF2_MT_Apparent_Power-Ph_3_POD:double
+</schema-string>
+<connectors>
+            <connector class="fs" name="File2">
+              <properties>
+                <property name="type"><![CDATA[pub]]></property>
+                <property name="dateformat"><![CDATA[%Y-%m-%d %H:%M:%S]]></property>
+                <property name="fsname"><![CDATA[weather.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+		<property name="rate"><![CDATA[2]]></property>
+                <property name="noautogenfield"><![CDATA[true]]></property>
+		<property name="repeatcount"><![CDATA[1000]]></property>
+              </properties>
+            </connector>
+          </connectors>
+</window-source>
+<window-compute pubsub='true' name='Compute_Ambient_Temp'>
+   <schema>
+      <fields>
+<field name="ID" type="int64" key="true"/>
+<field name="SF2_Met_Ambient_Temp" type="double"/>
+<field name="POA_Met_1_Irradiance" type="double"/>
+<field name="Key" type="string"/>
+<field name="SF2_MT_kWH_Gen" type="double"/>
+</fields>
+</schema>
+   <output>
+<field-expr><![CDATA[SF2_Met_Ambient_Temp]]></field-expr>
+<field-expr><![CDATA[POA_Met_1_Irradiance]]></field-expr>
+<field-expr><![CDATA["x"]]></field-expr>
+<field-expr><![CDATA[SF2_MT_kWH_Gen]]></field-expr>
+ </output>
+</window-compute>
+<window-aggregate name='Agg_Ambient_Temp' pubsub='true'>
+   <schema>
+      <fields>
+         <field name='Key' type='string' key='true'/>
+         <field name='SF2_Met_Ambient_Temp' type='double'/>
+      </fields>
+   </schema>
+   <output>
+      <field-expr><![CDATA[ESP_aAve(SF2_Met_Ambient_Temp)]]></field-expr>
+   </output>
+</window-aggregate>
+<window-aggregate name='Agg_POV_Irradiance' pubsub='true'>
+   <schema>
+      <fields>
+         <field name='Key' type='string' key='true'/>
+         <field name='POA_Met_1_Irradiance' type='double'/>
+      </fields>
+   </schema>
+   <output>
+      <field-expr><![CDATA[ESP_aAve(POA_Met_1_Irradiance)]]></field-expr>
+   </output>
+</window-aggregate>
+<window-aggregate name='Agg_kWH_Generated' pubsub='true'>
+   <schema>
+      <fields>
+         <field name='Key' type='string' key='true'/>
+         <field name='SF2_MT_kWH_Gen' type='double'/>
+      </fields>
+   </schema>
+   <output>
+      <field-expr><![CDATA[ESP_aAve(POA_Met_1_Irradiance)]]></field-expr>
+   </output>
+</window-aggregate>
+<window-source name="Source_Raw_Modbus" index='pi_EMPTY' insert-only="true" autogen-key='true' >
+<schema-string>
+ID*:int64,Modbus_Register:int64,Tag:string,Unit:string,Byte_string1:int64,Byte_string2:int64
+</schema-string>
+<connectors>
+            <connector class="fs" name="File">
+              <properties>
+                <property name="type"><![CDATA[pub]]></property>
+                <property name="dateformat"><![CDATA[%Y-%m-%d %H:%M:%S]]></property>
+                <property name="fsname"><![CDATA[SF2_Modbus_Byte_String_data.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+                <property name="rate"><![CDATA[5]]></property>
+                <property name="noautogenfield"><![CDATA[true]]></property>
+                <property name="repeatcount"><![CDATA[1465]]></property>
+		<property name="addcsvopcode"><![CDATA[true]]></property>
+		<property name="addcsvflags"><![CDATA[normal]]></property>
+              </properties>
+            </connector>
+          </connectors>
+</window-source>
+<window-source index='pi_EMPTY' name="Source_Pre_JSON" insert-only="true" autogen-key='true' >
+<schema-string>
+ID*:int64,Json_String:string
+</schema-string>
+<connectors>
+            <connector class="fs" name="File4">
+              <properties>
+                <property name="type"><![CDATA[pub]]></property>
+		<property name="csvfielddelimiter"><![CDATA[|]]></property>
+                <property name="dateformat"><![CDATA[%Y-%m-%d %H:%M:%S]]></property>
+                <property name="fsname"><![CDATA[combiner_json.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+                <property name="rate"><![CDATA[5]]></property>
+                <property name="noautogenfield"><![CDATA[true]]></property>
+                <property name="repeatcount"><![CDATA[1810]]></property>
+		<property name="addcsvopcode"><![CDATA[true]]></property>
+                <property name="addcsvflags"><![CDATA[normal]]></property>
+              </properties>
+            </connector>
+          </connectors>
+</window-source>
+</windows>
+      <edges>
+        <edge source="Source_combiner" target="Retention"/>
+<edge source="Retention" target="w_calculate" role="data"/>
+<edge source="w_calculate" target="Join_Solar"/>
+<edge source="Source_combiner" target="Join_Solar"/>
+<edge source="Join_Solar" target="Compute_Key"/>
+<edge source="Compute_Key" target="alert_slow_degration"/>
+<edge source="alert_slow_degration" target="Retention_Agg"/>
+<edge source="Retention_Agg" target="Aggregate_events"/>
+<edge source="Aggregate_events" target="Compute_Zip_Lat_Lon"/>
+<edge source="Join_Solar" target="Compute_Temp"/>
+<edge source="Compute_Temp" target="Agg_Temp"/>
+<edge source="Source_weather" target="Compute_Ambient_Temp"/>
+<edge source="Compute_Ambient_Temp" target="Agg_Ambient_Temp"/>
+<edge source="Compute_Ambient_Temp" target="Agg_POV_Irradiance"/>
+<edge source="Compute_Ambient_Temp" target="Agg_kWH_Generated"/>
+      </edges>
+    </contquery>
+  </contqueries>
+</project>

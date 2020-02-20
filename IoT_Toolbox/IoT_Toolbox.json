@@ -1,0 +1,2513 @@
+{
+  "users": [
+    "Default"
+  ],
+  "currentUser": "Default",
+  "settings": {
+    "Default": {
+      "theme": "nova-dark",
+      "headerBackground": "#00517F",
+      "contentBackground": "#C0C0C0",
+      "panelBackground": "#C0C0C0",
+      "panelForeground": "#C0C0C0",
+      "leftbarBackground": "#00314C",
+      "version": "0.1.3",
+      "currentDashboardId": "edd78789-32e5-48f0-a50a-df579663d771",
+      "fullscreenWidget": "",
+      "dashboardLocked": true
+    }
+  },
+  "simulator": {},
+  "servers": {},
+  "graphs": {},
+  "dashboards": {
+    "Default": {
+      "dashboardsList": [
+        {
+          "id": "491d8be0-47d1-42f6-959e-f47c90c95056",
+          "title": "Default",
+          "widgets": [],
+          "locked": false,
+          "selected": "false"
+        },
+        {
+          "id": "1ce5039e-27bd-4c3b-881e-d57682ee0e5a",
+          "title": "Solar Farm - Data from ModBus to ESP",
+          "widgets": [
+            {
+              "id": "bffca97e-36b3-4335-9edc-123d7d565f06",
+              "dashboardId": "1ce5039e-27bd-4c3b-881e-d57682ee0e5a",
+              "title": "Raw Data from ModBus",
+              "cols": 49,
+              "rows": 9,
+              "x": 8,
+              "y": 0,
+              "resizeEnabled": true,
+              "type": "sf-table1-grid-item",
+              "typeData": {
+                "type": "sf-table1-grid-item",
+                "builder": {}
+              },
+              "config": [
+                {
+                  "label": "Title",
+                  "configName": "TITLE",
+                  "type": "STRING",
+                  "value": "Raw Data from ModBus",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                },
+                {
+                  "label": "ESP Subscriber Config",
+                  "configName": "ESP_CONFIG_SUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": true,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        }
+                      ],
+                      "value": "5297a887-516d-4380-824a-8e5ad592bcbe",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Socket Update Type",
+                      "configName": "ESP_INTERVAL_OR_PAGESIZE",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Interval",
+                          "value": "Interval"
+                        },
+                        {
+                          "label": "Pagesize",
+                          "value": "Pagesize"
+                        }
+                      ],
+                      "value": "Interval",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Interval (ms)",
+                      "configName": "ESP_INTERVAL",
+                      "type": "INTEGER",
+                      "value": "1000",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Pagesize",
+                      "configName": "ESP_PAGESIZE",
+                      "type": "INTEGER",
+                      "value": "50",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Request Schema",
+                      "configName": "ESP_SCHEMA",
+                      "type": "CHECKBOX",
+                      "value": false,
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "label": "ESP Publisher Config",
+                  "configName": "ESP_CONFIG_PUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": false,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        }
+                      ],
+                      "value": "1",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Publish Data Format",
+                      "configName": "ESP_PUB_FORMAT",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Properties",
+                          "value": "properties"
+                        },
+                        {
+                          "label": "Json",
+                          "value": "json"
+                        },
+                        {
+                          "label": "BROKE Xml",
+                          "value": "xml"
+                        }
+                      ],
+                      "value": "properties",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "6628d598-e6e7-442e-9dca-87b081e4fec9",
+              "dashboardId": "1ce5039e-27bd-4c3b-881e-d57682ee0e5a",
+              "title": "Output from Omnio software (Standardized JSON)",
+              "cols": 49,
+              "rows": 11,
+              "x": 8,
+              "y": 9,
+              "resizeEnabled": true,
+              "type": "sf-table2-grid-item",
+              "typeData": {
+                "type": "sf-table2-grid-item",
+                "builder": {}
+              },
+              "config": [
+                {
+                  "label": "Title",
+                  "configName": "TITLE",
+                  "type": "STRING",
+                  "value": "Output from Omnio software (Standardized JSON)",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                },
+                {
+                  "label": "ESP Subscriber Config",
+                  "configName": "ESP_CONFIG_SUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": true,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        }
+                      ],
+                      "value": "6297ed83-d4b3-4b86-9558-895906bac07c",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Socket Update Type",
+                      "configName": "ESP_INTERVAL_OR_PAGESIZE",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Interval",
+                          "value": "Interval"
+                        },
+                        {
+                          "label": "Pagesize",
+                          "value": "Pagesize"
+                        }
+                      ],
+                      "value": "Interval",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Interval (ms)",
+                      "configName": "ESP_INTERVAL",
+                      "type": "INTEGER",
+                      "value": "1000",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Pagesize",
+                      "configName": "ESP_PAGESIZE",
+                      "type": "INTEGER",
+                      "value": "50",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Request Schema",
+                      "configName": "ESP_SCHEMA",
+                      "type": "CHECKBOX",
+                      "value": false,
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "label": "ESP Publisher Config",
+                  "configName": "ESP_CONFIG_PUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": false,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        }
+                      ],
+                      "value": "1",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Publish Data Format",
+                      "configName": "ESP_PUB_FORMAT",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Properties",
+                          "value": "properties"
+                        },
+                        {
+                          "label": "Json",
+                          "value": "json"
+                        },
+                        {
+                          "label": "BROKE Xml",
+                          "value": "xml"
+                        }
+                      ],
+                      "value": "properties",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "91c54eb6-3064-49f7-b088-5764a7d257b8",
+              "dashboardId": "1ce5039e-27bd-4c3b-881e-d57682ee0e5a",
+              "title": "Data Streamed through SAS ESP",
+              "cols": 49,
+              "rows": 9,
+              "x": 8,
+              "y": 20,
+              "resizeEnabled": true,
+              "type": "sf-table3-grid-item",
+              "typeData": {
+                "type": "sf-table3-grid-item",
+                "builder": {}
+              },
+              "config": [
+                {
+                  "label": "Title",
+                  "configName": "TITLE",
+                  "type": "STRING",
+                  "value": "Data Streamed through SAS ESP",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                },
+                {
+                  "label": "ESP Subscriber Config",
+                  "configName": "ESP_CONFIG_SUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": true,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        }
+                      ],
+                      "value": "29c11859-bedc-42aa-83b3-ff10bcf61118",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Socket Update Type",
+                      "configName": "ESP_INTERVAL_OR_PAGESIZE",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Interval",
+                          "value": "Interval"
+                        },
+                        {
+                          "label": "Pagesize",
+                          "value": "Pagesize"
+                        }
+                      ],
+                      "value": "Interval",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Interval (ms)",
+                      "configName": "ESP_INTERVAL",
+                      "type": "INTEGER",
+                      "value": "1000",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Pagesize",
+                      "configName": "ESP_PAGESIZE",
+                      "type": "INTEGER",
+                      "value": "50",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Request Schema",
+                      "configName": "ESP_SCHEMA",
+                      "type": "CHECKBOX",
+                      "value": false,
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "label": "ESP Publisher Config",
+                  "configName": "ESP_CONFIG_PUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": false,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        }
+                      ],
+                      "value": "1",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Publish Data Format",
+                      "configName": "ESP_PUB_FORMAT",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Properties",
+                          "value": "properties"
+                        },
+                        {
+                          "label": "Json",
+                          "value": "json"
+                        },
+                        {
+                          "label": "BROKE Xml",
+                          "value": "xml"
+                        }
+                      ],
+                      "value": "properties",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "46da306f-5e82-4d47-8ddb-052feee988cc",
+              "dashboardId": "1ce5039e-27bd-4c3b-881e-d57682ee0e5a",
+              "title": "",
+              "cols": 8,
+              "rows": 29,
+              "x": 0,
+              "y": 0,
+              "resizeEnabled": true,
+              "type": "base-image-grid-item",
+              "typeData": {
+                "type": "base-image-grid-item",
+                "builder": {}
+              },
+              "config": [
+                {
+                  "label": "Title",
+                  "configName": "TITLE",
+                  "type": "STRING",
+                  "value": "",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                },
+                {
+                  "label": "URL of image to load",
+                  "configName": "BASE_IMAGE_URL",
+                  "type": "STRING",
+                  "value": "http://iotnuc02:8090/assets/sf-process.png",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "locked": false,
+          "selected": "false"
+        },
+        {
+          "id": "3c99f319-afc2-46e4-a3ed-d64e9bab1199",
+          "title": "Solar Farm - Slow Degradation Analysis",
+          "widgets": [
+            {
+              "id": "9d1a0370-8971-451e-8810-7559aae81c92",
+              "dashboardId": "3c99f319-afc2-46e4-a3ed-d64e9bab1199",
+              "title": "Solar Farm Combiner Currents",
+              "cols": 33,
+              "rows": 15,
+              "x": 0,
+              "y": 0,
+              "resizeEnabled": true,
+              "type": "sf-graph1-grid-item",
+              "typeData": {
+                "type": "sf-graph1-grid-item",
+                "builder": {}
+              },
+              "config": [
+                {
+                  "label": "Title",
+                  "configName": "TITLE",
+                  "type": "STRING",
+                  "value": "Solar Farm Combiner Currents",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                },
+                {
+                  "label": "ESP Subscriber Config",
+                  "configName": "ESP_CONFIG_SUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": true,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Socket Update Type",
+                      "configName": "ESP_INTERVAL_OR_PAGESIZE",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Interval",
+                          "value": "Interval"
+                        },
+                        {
+                          "label": "Pagesize",
+                          "value": "Pagesize"
+                        }
+                      ],
+                      "value": "Interval",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Interval (ms)",
+                      "configName": "ESP_INTERVAL",
+                      "type": "INTEGER",
+                      "value": "1000",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Pagesize",
+                      "configName": "ESP_PAGESIZE",
+                      "type": "INTEGER",
+                      "value": "50",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Request Schema",
+                      "configName": "ESP_SCHEMA",
+                      "type": "CHECKBOX",
+                      "value": false,
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "label": "ESP Publisher Config",
+                  "configName": "ESP_CONFIG_PUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": false,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "1",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Publish Data Format",
+                      "configName": "ESP_PUB_FORMAT",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Properties",
+                          "value": "properties"
+                        },
+                        {
+                          "label": "Json",
+                          "value": "json"
+                        },
+                        {
+                          "label": "BROKE Xml",
+                          "value": "xml"
+                        }
+                      ],
+                      "value": "properties",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "e4b7aa29-7177-4d5f-9079-cde28fae073a",
+              "dashboardId": "3c99f319-afc2-46e4-a3ed-d64e9bab1199",
+              "title": "Angles Changes among Currents",
+              "cols": 26,
+              "rows": 12,
+              "x": 0,
+              "y": 15,
+              "resizeEnabled": true,
+              "type": "sf-graph2-grid-item",
+              "typeData": {
+                "type": "sf-graph2-grid-item",
+                "builder": {}
+              },
+              "config": [
+                {
+                  "label": "Title",
+                  "configName": "TITLE",
+                  "type": "STRING",
+                  "value": "Angles Changes among Currents",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                },
+                {
+                  "label": "ESP Subscriber Config",
+                  "configName": "ESP_CONFIG_SUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": true,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Socket Update Type",
+                      "configName": "ESP_INTERVAL_OR_PAGESIZE",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Interval",
+                          "value": "Interval"
+                        },
+                        {
+                          "label": "Pagesize",
+                          "value": "Pagesize"
+                        }
+                      ],
+                      "value": "Interval",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Interval (ms)",
+                      "configName": "ESP_INTERVAL",
+                      "type": "INTEGER",
+                      "value": "1000",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Pagesize",
+                      "configName": "ESP_PAGESIZE",
+                      "type": "INTEGER",
+                      "value": "50",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Request Schema",
+                      "configName": "ESP_SCHEMA",
+                      "type": "CHECKBOX",
+                      "value": false,
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "label": "ESP Publisher Config",
+                  "configName": "ESP_CONFIG_PUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": false,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "1",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Publish Data Format",
+                      "configName": "ESP_PUB_FORMAT",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Properties",
+                          "value": "properties"
+                        },
+                        {
+                          "label": "Json",
+                          "value": "json"
+                        },
+                        {
+                          "label": "BROKE Xml",
+                          "value": "xml"
+                        }
+                      ],
+                      "value": "properties",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ae7de2e5-4344-4934-b1f5-00d34bbe10fe",
+              "dashboardId": "3c99f319-afc2-46e4-a3ed-d64e9bab1199",
+              "title": "Projected Angles vs. Actual",
+              "cols": 25,
+              "rows": 12,
+              "x": 26,
+              "y": 15,
+              "resizeEnabled": true,
+              "type": "sf-graph3-grid-item",
+              "typeData": {
+                "type": "sf-graph3-grid-item",
+                "builder": {}
+              },
+              "config": [
+                {
+                  "label": "Title",
+                  "configName": "TITLE",
+                  "type": "STRING",
+                  "value": "Projected Angles vs. Actual",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                },
+                {
+                  "label": "ESP Subscriber Config",
+                  "configName": "ESP_CONFIG_SUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": true,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        }
+                      ],
+                      "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Socket Update Type",
+                      "configName": "ESP_INTERVAL_OR_PAGESIZE",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Interval",
+                          "value": "Interval"
+                        },
+                        {
+                          "label": "Pagesize",
+                          "value": "Pagesize"
+                        }
+                      ],
+                      "value": "Interval",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Interval (ms)",
+                      "configName": "ESP_INTERVAL",
+                      "type": "INTEGER",
+                      "value": "1000",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Pagesize",
+                      "configName": "ESP_PAGESIZE",
+                      "type": "INTEGER",
+                      "value": "50",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Request Schema",
+                      "configName": "ESP_SCHEMA",
+                      "type": "CHECKBOX",
+                      "value": false,
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "label": "ESP Publisher Config",
+                  "configName": "ESP_CONFIG_PUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": false,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        }
+                      ],
+                      "value": "1",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Publish Data Format",
+                      "configName": "ESP_PUB_FORMAT",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Properties",
+                          "value": "properties"
+                        },
+                        {
+                          "label": "Json",
+                          "value": "json"
+                        },
+                        {
+                          "label": "BROKE Xml",
+                          "value": "xml"
+                        }
+                      ],
+                      "value": "properties",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "dd93a24b-6f97-4cfd-a624-71305d6e53d2",
+              "dashboardId": "3c99f319-afc2-46e4-a3ed-d64e9bab1199",
+              "title": "",
+              "cols": 18,
+              "rows": 15,
+              "x": 33,
+              "y": 0,
+              "resizeEnabled": true,
+              "type": "base-image-grid-item",
+              "typeData": {
+                "type": "base-image-grid-item",
+                "builder": {}
+              },
+              "config": [
+                {
+                  "label": "Title",
+                  "configName": "TITLE",
+                  "type": "STRING",
+                  "value": "",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                },
+                {
+                  "label": "URL of image to load",
+                  "configName": "BASE_IMAGE_URL",
+                  "type": "STRING",
+                  "value": "http://iotnuc02:8090/assets/sf-aerial.png",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "locked": false,
+          "selected": "false"
+        },
+        {
+          "id": "edd78789-32e5-48f0-a50a-df579663d771",
+          "title": "Solar Farm - Operational Dashboard",
+          "widgets": [
+            {
+              "id": "9acd04c2-3afb-4a54-91f1-bb20846f4741",
+              "dashboardId": "edd78789-32e5-48f0-a50a-df579663d771",
+              "title": "",
+              "cols": 20,
+              "rows": 25,
+              "x": 0,
+              "y": 0,
+              "resizeEnabled": true,
+              "type": "sf-map1-grid-item",
+              "typeData": {
+                "type": "sf-map1-grid-item",
+                "builder": {}
+              },
+              "config": [
+                {
+                  "label": "Title",
+                  "configName": "TITLE",
+                  "type": "STRING",
+                  "value": "",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                },
+                {
+                  "label": "ESP Subscriber Config",
+                  "configName": "ESP_CONFIG_SUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": true,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "b0cb7521-cc73-4660-8646-0983d31031f2",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Socket Update Type",
+                      "configName": "ESP_INTERVAL_OR_PAGESIZE",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Interval",
+                          "value": "Interval"
+                        },
+                        {
+                          "label": "Pagesize",
+                          "value": "Pagesize"
+                        }
+                      ],
+                      "value": "Interval",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Interval (ms)",
+                      "configName": "ESP_INTERVAL",
+                      "type": "INTEGER",
+                      "value": "1000",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Pagesize",
+                      "configName": "ESP_PAGESIZE",
+                      "type": "INTEGER",
+                      "value": "50",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Request Schema",
+                      "configName": "ESP_SCHEMA",
+                      "type": "CHECKBOX",
+                      "value": false,
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "label": "ESP Publisher Config",
+                  "configName": "ESP_CONFIG_PUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": false,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "1",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Publish Data Format",
+                      "configName": "ESP_PUB_FORMAT",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Properties",
+                          "value": "properties"
+                        },
+                        {
+                          "label": "Json",
+                          "value": "json"
+                        },
+                        {
+                          "label": "BROKE Xml",
+                          "value": "xml"
+                        }
+                      ],
+                      "value": "properties",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "c79c6707-a923-4a93-8910-23f92eb3d991",
+              "dashboardId": "edd78789-32e5-48f0-a50a-df579663d771",
+              "title": "Temperature",
+              "cols": 7,
+              "rows": 15,
+              "x": 20,
+              "y": 0,
+              "resizeEnabled": true,
+              "type": "sf-gauge1-grid-item",
+              "typeData": {
+                "type": "sf-gauge1-grid-item",
+                "builder": {}
+              },
+              "config": [
+                {
+                  "label": "Title",
+                  "configName": "TITLE",
+                  "type": "STRING",
+                  "value": "Temperature",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                },
+                {
+                  "label": "ESP Subscriber Config",
+                  "configName": "ESP_CONFIG_SUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": true,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Socket Update Type",
+                      "configName": "ESP_INTERVAL_OR_PAGESIZE",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Interval",
+                          "value": "Interval"
+                        },
+                        {
+                          "label": "Pagesize",
+                          "value": "Pagesize"
+                        }
+                      ],
+                      "value": "Interval",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Interval (ms)",
+                      "configName": "ESP_INTERVAL",
+                      "type": "INTEGER",
+                      "value": "1000",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Pagesize",
+                      "configName": "ESP_PAGESIZE",
+                      "type": "INTEGER",
+                      "value": "50",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Request Schema",
+                      "configName": "ESP_SCHEMA",
+                      "type": "CHECKBOX",
+                      "value": false,
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "label": "ESP Publisher Config",
+                  "configName": "ESP_CONFIG_PUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": false,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "1",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Publish Data Format",
+                      "configName": "ESP_PUB_FORMAT",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Properties",
+                          "value": "properties"
+                        },
+                        {
+                          "label": "Json",
+                          "value": "json"
+                        },
+                        {
+                          "label": "BROKE Xml",
+                          "value": "xml"
+                        }
+                      ],
+                      "value": "properties",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "98a43c80-4bb5-41f8-992a-43b57761f06c",
+              "dashboardId": "edd78789-32e5-48f0-a50a-df579663d771",
+              "title": "Irradiance",
+              "cols": 7,
+              "rows": 15,
+              "x": 27,
+              "y": 0,
+              "resizeEnabled": true,
+              "type": "sf-gauge2-grid-item",
+              "typeData": {
+                "type": "sf-gauge2-grid-item",
+                "builder": {}
+              },
+              "config": [
+                {
+                  "label": "Title",
+                  "configName": "TITLE",
+                  "type": "STRING",
+                  "value": "Irradiance",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                },
+                {
+                  "label": "ESP Subscriber Config",
+                  "configName": "ESP_CONFIG_SUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": true,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Socket Update Type",
+                      "configName": "ESP_INTERVAL_OR_PAGESIZE",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Interval",
+                          "value": "Interval"
+                        },
+                        {
+                          "label": "Pagesize",
+                          "value": "Pagesize"
+                        }
+                      ],
+                      "value": "Interval",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Interval (ms)",
+                      "configName": "ESP_INTERVAL",
+                      "type": "INTEGER",
+                      "value": "1000",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Pagesize",
+                      "configName": "ESP_PAGESIZE",
+                      "type": "INTEGER",
+                      "value": "50",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Request Schema",
+                      "configName": "ESP_SCHEMA",
+                      "type": "CHECKBOX",
+                      "value": false,
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "label": "ESP Publisher Config",
+                  "configName": "ESP_CONFIG_PUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": false,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "1",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Publish Data Format",
+                      "configName": "ESP_PUB_FORMAT",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Properties",
+                          "value": "properties"
+                        },
+                        {
+                          "label": "Json",
+                          "value": "json"
+                        },
+                        {
+                          "label": "BROKE Xml",
+                          "value": "xml"
+                        }
+                      ],
+                      "value": "properties",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "f0f44e21-e0df-467a-accb-88805a485629",
+              "dashboardId": "edd78789-32e5-48f0-a50a-df579663d771",
+              "title": "Energy Generated",
+              "cols": 13,
+              "rows": 15,
+              "x": 34,
+              "y": 0,
+              "resizeEnabled": true,
+              "type": "sf-gauge3-grid-item",
+              "typeData": {
+                "type": "sf-gauge3-grid-item",
+                "builder": {}
+              },
+              "config": [
+                {
+                  "label": "Title",
+                  "configName": "TITLE",
+                  "type": "STRING",
+                  "value": "Energy Generated",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                },
+                {
+                  "label": "ESP Subscriber Config",
+                  "configName": "ESP_CONFIG_SUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": true,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Socket Update Type",
+                      "configName": "ESP_INTERVAL_OR_PAGESIZE",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Interval",
+                          "value": "Interval"
+                        },
+                        {
+                          "label": "Pagesize",
+                          "value": "Pagesize"
+                        }
+                      ],
+                      "value": "Interval",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Interval (ms)",
+                      "configName": "ESP_INTERVAL",
+                      "type": "INTEGER",
+                      "value": "1000",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Pagesize",
+                      "configName": "ESP_PAGESIZE",
+                      "type": "INTEGER",
+                      "value": "50",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Request Schema",
+                      "configName": "ESP_SCHEMA",
+                      "type": "CHECKBOX",
+                      "value": false,
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "label": "ESP Publisher Config",
+                  "configName": "ESP_CONFIG_PUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": false,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "1",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Publish Data Format",
+                      "configName": "ESP_PUB_FORMAT",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Properties",
+                          "value": "properties"
+                        },
+                        {
+                          "label": "Json",
+                          "value": "json"
+                        },
+                        {
+                          "label": "BROKE Xml",
+                          "value": "xml"
+                        }
+                      ],
+                      "value": "properties",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "404046d7-b9e0-4443-9ee7-e56cbad07a91",
+              "dashboardId": "edd78789-32e5-48f0-a50a-df579663d771",
+              "title": "Solar Farm Status",
+              "cols": 27,
+              "rows": 10,
+              "x": 20,
+              "y": 15,
+              "resizeEnabled": true,
+              "type": "sf-table4-grid-item",
+              "typeData": {
+                "type": "sf-table4-grid-item",
+                "builder": {}
+              },
+              "config": [
+                {
+                  "label": "Title",
+                  "configName": "TITLE",
+                  "type": "STRING",
+                  "value": "Solar Farm Status",
+                  "allowNull": false,
+                  "expanded": false,
+                  "children": []
+                },
+                {
+                  "label": "ESP Subscriber Config",
+                  "configName": "ESP_CONFIG_SUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": true,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "b0cb7521-cc73-4660-8646-0983d31031f2",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Socket Update Type",
+                      "configName": "ESP_INTERVAL_OR_PAGESIZE",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Interval",
+                          "value": "Interval"
+                        },
+                        {
+                          "label": "Pagesize",
+                          "value": "Pagesize"
+                        }
+                      ],
+                      "value": "Interval",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Interval (ms)",
+                      "configName": "ESP_INTERVAL",
+                      "type": "INTEGER",
+                      "value": "1000",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Query Pagesize",
+                      "configName": "ESP_PAGESIZE",
+                      "type": "INTEGER",
+                      "value": "50",
+                      "allowNull": false,
+                      "min_max": {
+                        "min": 0,
+                        "max": 999999999
+                      },
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Request Schema",
+                      "configName": "ESP_SCHEMA",
+                      "type": "CHECKBOX",
+                      "value": false,
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "label": "ESP Publisher Config",
+                  "configName": "ESP_CONFIG_PUB",
+                  "type": "DISPLAY_GROUP",
+                  "allowNull": true,
+                  "expanded": false,
+                  "children": [
+                    {
+                      "label": "Server Label",
+                      "configName": "ESP_SERVER_LABEL",
+                      "type": "DROPDOWN",
+                      "inputData": [
+                        {
+                          "label": "",
+                          "value": ""
+                        },
+                        {
+                          "label": "SF ModBus Raw",
+                          "value": "5297a887-516d-4380-824a-8e5ad592bcbe"
+                        },
+                        {
+                          "label": "SF JSON",
+                          "value": "6297ed83-d4b3-4b86-9558-895906bac07c"
+                        },
+                        {
+                          "label": "SF Combiner",
+                          "value": "29c11859-bedc-42aa-83b3-ff10bcf61118"
+                        },
+                        {
+                          "label": "SF Join",
+                          "value": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f"
+                        },
+                        {
+                          "label": "SF Compute Key",
+                          "value": "b0cb7521-cc73-4660-8646-0983d31031f2"
+                        },
+                        {
+                          "label": "SF Temperature",
+                          "value": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8"
+                        },
+                        {
+                          "label": "SF Irradiance",
+                          "value": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87"
+                        },
+                        {
+                          "label": "SF kWH",
+                          "value": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a"
+                        }
+                      ],
+                      "value": "1",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    },
+                    {
+                      "label": "Publish Data Format",
+                      "configName": "ESP_PUB_FORMAT",
+                      "type": "RADIO_BUTTON",
+                      "inputData": [
+                        {
+                          "label": "Properties",
+                          "value": "properties"
+                        },
+                        {
+                          "label": "Json",
+                          "value": "json"
+                        },
+                        {
+                          "label": "BROKE Xml",
+                          "value": "xml"
+                        }
+                      ],
+                      "value": "properties",
+                      "allowNull": false,
+                      "expanded": false,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "locked": false,
+          "selected": "false"
+        }
+      ]
+    }
+  },
+  "connections": {
+    "Default": {
+      "connectionsList": [
+        {
+          "id": "5297a887-516d-4380-824a-8e5ad592bcbe",
+          "label": "SF ModBus Raw",
+          "type": 0,
+          "pubsub": "subscribers",
+          "server": "iotnuc02",
+          "port": "40000",
+          "project": "Solar_Farm",
+          "continuosQuery": "query",
+          "window": "Source_Raw_Modbus",
+          "connectiveActive": false
+        },
+        {
+          "id": "6297ed83-d4b3-4b86-9558-895906bac07c",
+          "label": "SF JSON",
+          "type": 0,
+          "pubsub": "subscribers",
+          "server": "iotnuc02",
+          "port": "40000",
+          "project": "Solar_Farm",
+          "continuosQuery": "query",
+          "window": "Source_Pre_JSON",
+          "connectiveActive": false
+        },
+        {
+          "id": "29c11859-bedc-42aa-83b3-ff10bcf61118",
+          "label": "SF Combiner",
+          "type": 0,
+          "pubsub": "subscribers",
+          "server": "iotnuc02",
+          "port": "40000",
+          "project": "Solar_Farm",
+          "continuosQuery": "query",
+          "window": "Source_combiner",
+          "connectiveActive": false
+        },
+        {
+          "id": "ad7df5c2-b4fc-4bf4-baca-10d36c36f02f",
+          "label": "SF Join",
+          "type": 0,
+          "pubsub": "subscribers",
+          "server": "iotnuc02",
+          "port": "40000",
+          "project": "Solar_Farm",
+          "continuosQuery": "query",
+          "window": "Join_Solar",
+          "connectiveActive": false
+        },
+        {
+          "id": "b0cb7521-cc73-4660-8646-0983d31031f2",
+          "label": "SF Compute Key",
+          "type": 0,
+          "pubsub": "subscribers",
+          "server": "iotnuc02",
+          "port": "40000",
+          "project": "Solar_Farm",
+          "continuosQuery": "query",
+          "window": "Compute_Key",
+          "connectiveActive": false
+        },
+        {
+          "id": "30a0da6a-9422-4322-99d7-6bc26fa6f2f8",
+          "label": "SF Temperature",
+          "type": 0,
+          "pubsub": "subscribers",
+          "server": "iotnuc02",
+          "port": "40000",
+          "project": "Solar_Farm",
+          "continuosQuery": "query",
+          "window": "Agg_Ambient_Temp",
+          "connectiveActive": false
+        },
+        {
+          "id": "90b980eb-f54c-4b94-8a07-d8ecb83f3f87",
+          "label": "SF Irradiance",
+          "type": 0,
+          "pubsub": "subscribers",
+          "server": "iotnuc02",
+          "port": "40000",
+          "project": "Solar_Farm",
+          "continuosQuery": "query",
+          "window": "Agg_POV_Irradiance",
+          "connectiveActive": false
+        },
+        {
+          "id": "9409e6ea-0bf6-4c7e-aa11-c5f2c0ad7c2a",
+          "label": "SF kWH",
+          "type": 0,
+          "pubsub": "subscribers",
+          "server": "iotnuc02",
+          "port": "40000",
+          "project": "Solar_Farm",
+          "continuosQuery": "query",
+          "window": "Agg_kWH_Generated",
+          "connectiveActive": false
+        }
+      ]
+    }
+  }
+}
