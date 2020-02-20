@@ -8,7 +8,7 @@ This reference architecture walks you through the decision-making process involv
 
 SAS recommends customers and partners to use this reference architecture while building IoT applications that requires reading sensor data from various devices and use the data for reporting or building predictive models. Both the Omnio and ESP applications run in separate containers where the Omnio container reads the raw data from the sensors and formats the data which is consumed by the ESP edge container for reporting and analytical modeling.
 
-In this use case, the ESP and Omnio integration is used to read data from various sensors installed in the solar farm located at the SAS HQ, in Cary, North Carolina. The sensor data includes inverter data, real-time weather data, and combiner boxes data. The data is then used both for building a reporting dashboard and training a [Subspace tracking](https://gitlab.sas.com/IOT/accelerators/high-frequency-algorithms-for-iot-applications/blob/master/docs/sst.md) (SST) model to detect both hardware failures in the solar farm and slow degradation of slow panels.
+In this use case, the ESP and Omnio integration is used to read data from various sensors installed in the solar farm located at the SAS HQ, in Cary, North Carolina. The sensor data includes inverter data, real-time weather data, and combiner boxes data. The data is then used both for building a reporting dashboard and training a [Subspace tracking](https://github.com/sassoftware/iot-high-frequency-algorithms-for-applications/blob/master/docs/sst.md) (SST) model to detect both hardware failures in the solar farm and slow degradation of slow panels.
 
 ### Prerequisites
 
