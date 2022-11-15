@@ -1,3 +1,9 @@
+# Archived repository
+
+### Notice: The functionality provided in this repository is dated. Hence, the repository will no long accept submissions or offer support.
+
+---------
+
 # SAS ESP and Omnio Integration to bring analytics to the Edge
 
 <img src="https://img.shields.io/badge/Category-ESP Reference Architecture-blue"> <img src="https://img.shields.io/badge/Sub--Category-Omnio Integration-yellowgreen"> <img src="https://img.shields.io/badge/Difficulty-Advanced-yellow"> <img src="https://img.shields.io/badge/Analytical%20Method-Subspace Track (SST)-brightgreen"> <img src="https://img.shields.io/badge/Updated-Dec%202019-orange">
